@@ -1,25 +1,30 @@
 {
-  "name": "multilisten",
+  "name": "@carsondarling/multilisten",
   "version": "1.0.0",
-  "description": "",
+  "description": "Listen on both HTTP and HTTPS",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mimobaby/multilisten.git"
+    "url": "git+https://github.com/carsondarling/multilisten.git"
   },
   "author": "Carson Darling <cdarling@restdevices.com>",
   "bugs": {
-    "url": "https://github.com/mimobaby/multilisten/issues"
+    "url": "https://github.com/carsondarling/multilisten/issues"
   },
-  "homepage": "https://github.com/mimobaby/multilisten#readme",
+  "homepage": "https://github.com/carsondarling/multilisten#readme",
   "devDependencies": {
     "chai": "^3.2.0",
     "chai-as-promised": "^5.1.0",
     "mocha": "^2.2.5",
     "supertest": "^1.0.1",
     "supertest-as-promised": "^2.0.2"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "lodash": "^3.10.0"
   }
 }
