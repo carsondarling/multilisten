@@ -25,9 +25,19 @@ module.exports = function start(app, opts) {
     debug('Setting up HTTP->HTTPS redirect');
     httpServer = http.createServer(function(req, res) {
       debug('Redirecting %s to HTTPS', req.url);
-      var location = options.httpsBaseURL || 'https://' + req.headers.host;
+
+      var location;
+      if (options.httpsBaseURL) {
+        location = options.httpsBaseURL;
+      } else {
+        location = url.format({
+          protocol: 'https',
+          port: options.httpsPort,
+          hostname: req.headers.host.split(':')[0]
+        });
+      }
+
       location = url.resolve(location, req.url);
-      debug(location);
       res.writeHead(301, {Location: location});
       res.end();
     });
