@@ -165,7 +165,7 @@ describe('multilisten', function() {
         .expect(301)
         .then(function(res) {
           res.headers.should.have.property('location');
-          res.headers.location.should.equal('https://localhost:' + HTTP_PORT + '/');
+          res.headers.location.should.equal('https://localhost:' + HTTPS_PORT + '/');
         })
         .should.be.fulfilled;
     });
