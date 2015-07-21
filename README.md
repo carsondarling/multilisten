@@ -40,9 +40,9 @@ The app exposed by [Express](expressjs.com) is fully compatible, so Multilisten 
 
 #### options
 
-**options.httpPort** The port for the HTTP server to listen on
+**options.httpPort** The port for the HTTP server to listen on. Default 80
 
-**options.httpsPort** The port for the HTTPS server to listen on
+**options.httpsPort** The port for the HTTPS server to listen on. Default 443
 
 **options.sslOptions** Options for the HTTPS server, passed directly to Node's HTTPS module
 
@@ -54,11 +54,11 @@ If it is specified (e.g. with `https://domain.com:8443`), a the path will be app
 
 **options.mode**
 
-The mode determines which servers Multilisten will use to listen, and how they will respond. There are 4 possible modes: `http`, `https`, `both`, and `redirect`.
+The mode determines which servers Multilisten will use to listen, and how they will respond. There are 4 possible modes: `http`, `https`, `both`, and `redirect`. Default `redirect`
 
 |    Mode    |   HTTP Response   |  HTTPS Response  |       Description        |
 |------------|-------------------|------------------|--------------------------|
 | `http`     | Handled by `app`  | Disabled         | Listen on HTTP only      |
 | `https`    | Disabled          | Handled by `app` | Listen on HTTPS only     |
 | `both`     | Handled by `app`  | Handled by `app` | Use either HTTP or HTTPS |
-| `redirect` | Redirect to HTTPS | Handled by `app` | Force HTTPS              |
+| `redirect` | Redirect to HTTPS | Handled by `app` | Force HTTPS (default)    |
